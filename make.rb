@@ -1,9 +1,9 @@
 require 'fileutils'
 require 'imgkit'
 kit = IMGKit.new(File.new('status.html'))
-kit.to_file('test.png')
-# mkdir('~/Desktop/screen')
-FileUtils.mv('test.png', '~/Desktop/test.png')
-
-
-# puts 'Now go to your screen saver settings and change the folder to /Desktop/screen'
+kit.to_file('screensaver.png')
+dirname = File.dirname('images')
+unless File.directory?('images')
+  FileUtils.mkdir_p('images')
+end
+FileUtils.mv('screensaver.png', 'images/screensaver.png')
