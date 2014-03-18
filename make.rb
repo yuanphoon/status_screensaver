@@ -1,5 +1,9 @@
+require 'fileutils'
 require 'imgkit'
-class Make
-  kit = IMGKit.new('http://google.com')
-  kit.to_jpg
-end
+kit = IMGKit.new(File.new('status.html'))
+kit.to_file('test.png')
+# mkdir('~/Desktop/screen')
+FileUtils.mv('test.png', '~/Desktop/test.png')
+
+
+# puts 'Now go to your screen saver settings and change the folder to /Desktop/screen'
